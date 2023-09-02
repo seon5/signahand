@@ -13,7 +13,7 @@ const Home = () => {
           <div className="grid grid-row-2">
             <div className="col-span-1">
               <img
-                src="/assets/images/signahandHome.png"
+                src="https://seon5.github.io/signahand/assets/images/signahandHome.png"
                 className="w-full h-auto rounded-lg"
                 alt="Sample Image"
               />

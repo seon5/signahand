@@ -144,36 +144,53 @@ const PdfDisplay: React.FC<PdfDisplayProps> = ({ file }) => {
 
   return (
     <>
-    <div className="flex mt-10 justify-center h-screen">
-      <div className="relative" >
-        {loading && <Loading fileName={file.name} />}
-        <div ref={containerRef}></div>
-        {currentPage !== 1 && (
-          <button className="btn w-[150px] h-[70px] shadow border border-zinc-400" onClick={onHandlePrevPage}>
-            prev
-          </button>
-        )}
-        {currentPage !== numPages && (
-          <button className="btn w-[150px] h-[70px] shadow border border-zinc-400" onClick={onHandleNextPage}>
-            next
-          </button>
-        )}
-        {/* <button className="btn" onClick={drawSignature}>
+      <div className="flex mt-10 justify-center h-screen">
+        <div className="relative">
+          {loading && <Loading fileName={file.name} />}
+          <div ref={containerRef}></div>
+          {currentPage !== 1 && (
+            <button
+              className="btn w-[150px] h-[70px] shadow border border-zinc-400"
+              onClick={onHandlePrevPage}
+            >
+              prev
+            </button>
+          )}
+          {currentPage !== numPages && (
+            <button
+              className="btn w-[150px] h-[70px] shadow border border-zinc-400"
+              onClick={onHandleNextPage}
+            >
+              next
+            </button>
+          )}
+          {/* <button className="btn" onClick={drawSignature}>
           signature
         </button> */}
-        <Link to="/End">
-          <button className="btn w-[250px] h-[70px] absolute shadow border border-zinc-400" onClick={saveImage}>
-            <div className="flex items-center">
-              <div className="w-[225px] h-[69px] left-[9px] top-[11px] absolute">
-                <img className="w-[50.74px] h-[50px] left-0 top-0 absolute border" src="/assets/images/pdfimg2.png" />
-                <div className="left-[70px] top-4 absolute text-black text-[20px] font-normal">saveImage</div>
+          <Link to="/End">
+            <button
+              className="btn w-[250px] h-[70px] absolute shadow border border-zinc-400"
+              onClick={saveImage}
+            >
+              <div className="flex items-center">
+                <div className="w-[225px] h-[69px] left-[9px] top-[11px] absolute">
+                  <img
+                    className="w-[50.74px] h-[50px] left-0 top-0 absolute border"
+                    src="https://seon5.github.io/signahand/assets/images/pdfimg2.png"
+                  />
+                  <div className="left-[70px] top-4 absolute text-black text-[20px] font-normal">
+                    saveImage
+                  </div>
+                </div>
+                <img
+                  className="w-[40px] h-[40px] absolute right-0"
+                  src="https://seon5.github.io/signahand/assets/images/down.png"
+                />
               </div>
-              <img className="w-[40px] h-[40px] absolute right-0" src="/assets/images/down.png"/>
-            </div>
-          </button>
-        </Link>
+            </button>
+          </Link>
+        </div>
       </div>
-    </div>
     </>
   );
 };

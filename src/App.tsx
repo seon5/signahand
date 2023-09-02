@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <HandContextProvider>
-        <BrowserRouter basename="/gitlab/">
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/work" element={<Edit />} />
