@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/signahand/static/css/main.c6bdc49a.css",
-    "main.js": "/signahand/static/js/main.074b21ed.js",
+    "main.js": "/signahand/static/js/main.a726c720.js",
     "static/js/787.ee5b9d33.chunk.js": "/signahand/static/js/787.ee5b9d33.chunk.js",
     "index.html": "/signahand/index.html",
     "main.c6bdc49a.css.map": "/signahand/static/css/main.c6bdc49a.css.map",
-    "main.074b21ed.js.map": "/signahand/static/js/main.074b21ed.js.map",
+    "main.a726c720.js.map": "/signahand/static/js/main.a726c720.js.map",
     "787.ee5b9d33.chunk.js.map": "/signahand/static/js/787.ee5b9d33.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c6bdc49a.css",
-    "static/js/main.074b21ed.js"
+    "static/js/main.a726c720.js"
   ]
 }
