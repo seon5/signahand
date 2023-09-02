@@ -1,0 +1,101 @@
+# stages:
+#   - build
+#   - deploy
+
+# build:
+#   stage: build
+#   script:
+#     - echo "Build application here"
+
+# deploy:
+#   stage: deploy
+#   script:
+#     - echo "Deploy application here"
+
+# ---------------------------------------------------
+# deploy_staging:
+#   stage: deploy
+#   script:
+#     - echo "Deploy to staging server"
+#   environment:
+#     name: signahand
+#     url: http://220.149.40.40:3004/
+
+# ---------------------------------------------------
+# stages:
+#   - build
+#   - deploy
+
+
+# build:
+#   stage: build
+#   script:
+#     - echo "Build application here"
+
+# deploy:
+#   stage: deploy
+#   script:
+#     - echo "Deploy application here"
+
+# image: node:18.17.0 # change to match your project's node version
+
+# cache:
+#   paths:
+#     - node_modules/
+
+# before_script:
+#   - rm -rf build
+#   - CI=false npm install
+
+# pages:
+#   stage: deploy
+#   script:
+#     - CI=false npm run build
+#     - rm -rf public
+#     - cp build/index.html build/404.html
+#     - mv build public
+#   artifacts:
+#     paths:
+#       - public
+#   only:
+#     - main
+
+# image: node:18.17.0
+
+# cache:
+#   paths:
+#     - node_modules/
+
+# before_script:
+#   - apt-get update -qq
+#   - apt-get install -qq git
+#   - "which ssh-agent || ( apt-get install -qq openssh-client )"
+#   - eval $(ssh-agent -s)
+#   - ssh-add <(echo "$SSH_PRIVATE_KEY")
+#   - mkdir -p ~/.ssh
+#   - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+# deploy:
+#   stage: deploy
+#   environment:
+#     name: signahand
+#     url: http://220.149.40.40:3004/
+#   script:
+#     - bash deploy/deploy.sh
+#   only:
+#     - main
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+
+deploy:
+  stage: deploy
+  script:
+    - scp -r build user@server:/var/www/my-app
