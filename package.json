@@ -1,7 +1,7 @@
 {
   "name": "signahand",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@mediapipe/camera_utils": "^0.3.1675466862",
     "@mediapipe/drawing_utils": "^0.3.1675466124",
@@ -55,5 +55,6 @@
     "daisyui": "^3.5.0",
     "tailwindcss": "^3.3.3",
     "ts-loader": "^9.4.4"
-  }
+  },
+  "homepage": "./"
 }
